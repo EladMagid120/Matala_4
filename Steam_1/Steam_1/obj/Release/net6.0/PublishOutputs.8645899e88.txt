@@ -1,0 +1,16 @@
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\Steam_1.exe
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\Steam_1.dll
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\Steam_1.deps.json
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\Steam_1.runtimeconfig.json
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\Steam_1.pdb
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\System.Data.SqlClient.dll
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\runtimes\win-arm64\native\sni.dll
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\runtimes\win-x64\native\sni.dll
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\runtimes\win-x86\native\sni.dll
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\runtimes\unix\lib\net6.0\System.Data.SqlClient.dll
+C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Data.SqlClient.dll

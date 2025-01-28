@@ -1,0 +1,180 @@
+﻿/* מבנה של כרטיסיות */
+.games-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* רווח בין הכרטיסים */
+    margin-top: 20px; /* מרווח בין הכרטיסים לחלק העליון */
+}
+
+/* עיצוב הכרטיסים */
+.card {
+    border: 1px solid #d1d5db; /* צבע מסגרת אפור בהיר */
+    border-radius: 10px; /* פינות מעוגלות */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* צל עדין */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .card:hover {
+        transform: translateY(-5px); /* הרמה קלה בעת מעבר עכבר */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* צל גדול יותר */
+    }
+
+.card-img-top {
+    border-top-left-radius: 10px; /* התאמת פינות תמונה לכרטיס */
+    border-top-right-radius: 10px;
+    object-fit: cover; /* התאמה למידות */
+    height: 180px; /* גובה קבוע לתמונות */
+}
+
+/* עיצוב רשימה */
+.list-group-item {
+    font-size: 0.9em;
+    color: #374151; /* טקסט אפור כהה */
+}
+
+/* כפתור פעולה */
+.card-body .btn-primary {
+    background-color: #4f46e5; /* כחול כהה */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+    .card-body .btn-primary:hover {
+        background-color: #4338ca; /* כחול כהה יותר */
+    }
+
+/* עיצוב טקסט בתוך הכרטיס */
+.card-title {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #4f46e5; /* כחול כהה */
+}
+
+.card-text {
+    font-size: 1em;
+    color: #6b7280; /* טקסט אפור בהיר */
+}
+
+/* התאמה לתצוגות קטנות */
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* התאמה למסכים קטנים */
+    }
+}
+
+/* כותרת ראשית */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4f46e5; /* כחול כהה */
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    border-bottom: 3px solid #4338ca; /* כחול עמוק */
+}
+
+/* כפתור VIEW MY LIST */
+.center-button-container {
+    display: flex;
+    justify-content: center; /* מרכז את הכפתור אופקית */
+    margin-top: 20px; /* רווח מעל הכפתור */
+}
+
+button#viewMyListBtn,
+button#Login {
+    background-color: #4f46e5; /* כחול כהה */
+    color: white;
+    border: none;
+    padding: 15px 30px; /* מרווח פנימי */
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+    button#viewMyListBtn:hover,
+    button#Login:hover {
+        background-color: #4338ca; /* כחול כהה יותר */
+        transform: scale(1.05); /* אפקט קל */
+    }
+
+/* עיצוב טקסט */
+h1 {
+    text-align: center;
+    font-family: 'Arial Black', sans-serif; /* כתב יפה וכבד */
+    font-size: 2.5em; /* גודל טקסט מוגדל */
+    color: #374151; /* טקסט אפור כהה */
+    margin: 20px 0;
+}
+
+h2,
+h3 {
+    text-align: center; /* ממורכז */
+    font-family: 'Arial', sans-serif; /* כתב נעים יותר */
+    font-size: 1.5em;
+    color: #4f46e5; /* כחול כהה */
+    margin-bottom: 15px;
+}
+
+p {
+    margin: 0 15px;
+    line-height: 1.5;
+    color: #374151; /* טקסט אפור כהה */
+}
+
+a {
+    margin: 0 15px;
+    color: #4f46e5; /* קישור כחול כהה */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    a:hover {
+        color: #4338ca; /* קישור כהה יותר */
+    }
+
+/* עיצוב לפילטרים */
+.filter-section-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin: 30px auto;
+}
+
+.filter-section {
+    text-align: center;
+    padding: 20px 15px;
+    background-color: rgba(79, 70, 229, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 250px;
+    max-width: 320px;
+}
+
+.read-more-btn {
+    background-color: #1b2838; /* צבע רקע כהה */
+    color: #c7d5e0; /* צבע טקסט */
+    border: 1px solid #66c0f4; /* מסגרת בצבע תואם */
+    border-radius: 4px; /* עיגול פינות */
+    padding: 8px 12px; /* ריווח פנימי */
+    text-transform: uppercase; /* טקסט באותיות גדולות */
+    font-size: 0.9em; /* גודל טקסט */
+    cursor: pointer; /* ידית חץ */
+    transition: all 0.3s ease; /* אפקט מעבר חלק */
+}
+
+    .read-more-btn:hover {
+        background-color: #66c0f4; /* צבע רקע בהיר יותר */
+        color: #1b2838; /* צבע טקסט כהה */
+        border-color: #c7d5e0; /* מסגרת תואמת */
+        transform: scale(1.05); /* הגדלה קטנה */
+    }
+
+    .read-more-btn:focus {
+        outline: none; /* הסרת גבול ברירת המחדל */
+        box-shadow: 0 0 5px 2px rgba(102, 192, 244, 0.75); /* הצללה עדינה */
+    }
+

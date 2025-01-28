@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\אלעד\Source\Repos\Steam_1\Steam_1\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2025-01-28T22:41:40.5455606Z||;True|2025-01-29T00:40:33.8463717+02:00||;True|2025-01-07T19:04:45.7720885+02:00||;True|2024-12-11T01:22:40.5271426+02:00||;True|2024-11-19T19:45:18.0329084+02:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

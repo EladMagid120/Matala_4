@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Steam_1.props" />
+</Project>

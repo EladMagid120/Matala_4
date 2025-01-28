@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Login and Register</title>
+    <link href="../css/UserSide.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script src="../js/ajaxcalls.js"></script>
+    <link href="../css/UserSide.css" rel="stylesheet" />
+    <script>
+        $(document).ready(function () {
+            // הצגת טופס הרשמה בלבד בהתחלה
+            $("#registerTab").hide();
+            $("#loginTab").hide();
+
+            // כפתורים לעבור בין Login ו-Register
+            $(".switch-buttons button").on("click", function () {
+                const targetTab = $(this).data("target");
+                $(".tab").hide();
+                $(`#${targetTab}`).fadeIn();
+            });
+
+            // טופס הרשמה
+            $("#registerForm").submit(function (event) {
+                event.preventDefault();
+                if (validateRegisterForm()) {
+                    registerUser();
+                }
+            });
+
+            // טופס התחברות
+            $("#loginForm").submit(function (event) {
+                event.preventDefault();
+                loginUser();
+            });
+        });
+
+        // פונקציה לרישום משתמש חדש
+        function registerUser() {
+            const user = {
+                Name: $("#registerName").val(),
+                Email: $("#registerEmail").val(),
+                password: $("#registerPassword").val()
+            };
+
+            const api = `https://proj.ruppin.ac.il/igroup7/test2/tar1/api/Users/Register`;
+            ajaxCall("POST", api, JSON.stringify(user), registerUserSCB, registerUserECB);
+        }
+
+        // פונקציית הצלחה לרישום
+        function registerUserSCB(response) {
+            alert("הרשמה בוצעה בהצלחה! אנא התחבר.");
+            $("#registerTab").hide();
+            $("#loginTab").fadeIn();
+        }
+
+        // פונקציה לכישלון רישום
+        function registerUserECB(err) {
+            console.error(err);
+            alert("הרשמה נכשלה. נסה שנית.");
+        }
+
+        // פונקציה להתחברות
+        function loginUser() {
+            const email = $("#loginEmail").val();
+            const password = $("#loginPassword").val();
+
+            const api = `https://proj.ruppin.ac.il/igroup7/test2/tar1/api/Users/Login?Email=${email}&Password=${password}`;
+            ajaxCall("POST", api, null, loginUserSCB, loginUserECB);
+        }
+
+        // פונקציית הצלחה להתחברות
+        function loginUserSCB(response) {
+            const userName = response.name; // עדכון: שם המשתמש מגיע מהשרת
+            const Email = $("#loginEmail").val();
+            localStorage.setItem("loggedInUserName", userName);
+            localStorage.setItem("loggedInUserEmail", Email);
+            localStorage.setItem("loggedInUserId", response.userId); // שמירת id
+            alert("התחברת בהצלחה! מעביר לעמוד הבית...");
+            window.location.href = "index.html";
+        }
+
+        // פונקציה לכישלון התחברות
+        function loginUserECB(err) {
+            console.error(err);
+            alert("פרטי ההתחברות שגויים. נסה שנית.");
+        }
+
+        // בדיקות ולידציה לטופס הרשמה
+        function validateRegisterForm() {
+            const name = $("#registerName").val();
+            const email = $("#registerEmail").val();
+            const password = $("#registerPassword").val();
+
+            const nameRegex = /^[a-zA-Z0-9 ]+$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const passwordRegex = /^[A-Z0-9]{8,}$/;
+
+            if (!nameRegex.test(name)) {
+                alert("שם יכול לכלול אותיות, מספרים ורווחים בלבד.");
+                return false;
+            }
+
+            if (!emailRegex.test(email)) {
+                alert("כתובת אימייל לא תקינה.");
+                return false;
+            }
+
+            if (!passwordRegex.test(password)) {
+                alert("סיסמה חייבת להיות לפחות באורך 8 תווים ולכלול אותיות גדולות ומספרים בלבד.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Login and Registration</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- כפתורי מעבר בין טאבים -->
+            <div class="switch-buttons">
+                <button data-target="registerTab">Register</button>
+                <button data-target="loginTab">Login</button>
+            </div>
+
+            <!-- טופס הרשמה -->
+            <div id="registerTab" class="tab">
+                <h2>הרשמה</h2>
+                <form id="registerForm">
+                    <label for="registerName">Name:</label>
+                    <input type="text" id="registerName" name="name" required />
+
+                    <label for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" name="email" required />
+
+                    <label for="registerPassword">Password:</label>
+                    <input type="password" id="registerPassword" name="password" required />
+
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+
+            <!-- טופס התחברות -->
+            <div id="loginTab" class="tab">
+                <h2>התחברות</h2>
+                <form id="loginForm">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" name="email" required />
+
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" name="password" required />
+
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
